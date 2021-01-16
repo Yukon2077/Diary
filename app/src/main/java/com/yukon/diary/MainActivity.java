@@ -18,4 +18,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(settingsIntent);
     }
 
+    public void createLogBox(View view){
+
+    }
+
 }
