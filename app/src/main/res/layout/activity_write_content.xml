@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="gotoSettings"
-    tools:context=".MainActivity">
-
+    tools:context=".writeContent">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -23,15 +21,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/app_name"
+            android:text="@string/write_content"
             android:textColor="@color/white"
             android:textSize="30sp"
             tools:layout_editor_absoluteX="130dp"
             tools:layout_editor_absoluteY="74dp"
-            tools:text="@string/app_name" />
+            tools:text="@string/write_content" />
 
         <Button
-            android:id="@+id/settingsbutton"
+            android:id="@+id/savebutton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="end"
@@ -39,46 +37,28 @@
             android:drawableStart="@drawable/ic_settings_white_48dp"
             android:minWidth="55dp"
             android:minHeight="0dp"
-            android:onClick="gotoSettings"
+            android:onClick="save"
             tools:layout_editor_absoluteX="18dp"
             tools:layout_editor_absoluteY="17dp" />
 
 
+
     </androidx.appcompat.widget.Toolbar>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingAddButton"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:clickable="true"
-        android:contentDescription="@string/add_button"
-        android:focusable="true"
-        android:onClick="gotoWriteContent"
-        android:scaleType="center"
-        app:backgroundTint="@color/black"
-        app:fabCustomSize="75dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar"
-        app:layout_constraintVertical_bias="0.9"
-        app:maxImageSize="45dp"
-        app:srcCompat="@drawable/ic_add_white_48dp" />
-
-    <ScrollView
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/write_anything"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar">
+        app:layout_constraintTop_toBottomOf="@+id/app_bar" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
