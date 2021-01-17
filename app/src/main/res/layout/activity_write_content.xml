@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".writeContent">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -31,16 +32,15 @@
         <Button
             android:id="@+id/savebutton"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:background="@null"
-            android:drawableStart="@drawable/ic_settings_white_48dp"
+            android:drawableStart="@drawable/sharp_save_white_48dp"
             android:minWidth="55dp"
             android:minHeight="0dp"
             android:onClick="save"
             tools:layout_editor_absoluteX="18dp"
             tools:layout_editor_absoluteY="17dp" />
-
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -58,7 +58,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_bar" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
