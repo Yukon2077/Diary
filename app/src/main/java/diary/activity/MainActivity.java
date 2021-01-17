@@ -1,4 +1,4 @@
-package com.yukon.diary;
+package diary.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+
+import com.yukon.diary.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void gotoSettings(View view) {
-        Intent settingsIntent = new Intent(this,SettingsActivity.class);
+        Intent settingsIntent = new Intent(this, SettingsActivity.class);
         startActivity(settingsIntent);
     }
 
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void gotoWriteContent(View view){
-        Intent writeContent = new Intent(this, writeContent.class) ;
+        Intent writeContent = new Intent(this, diary.activity.writeContent.class) ;
         startActivity(writeContent);
     }
 

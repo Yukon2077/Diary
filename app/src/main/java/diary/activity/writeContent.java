@@ -1,12 +1,15 @@
-package com.yukon.diary;
+package diary.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.yukon.diary.R;
 
 import org.w3c.dom.Text;
 
