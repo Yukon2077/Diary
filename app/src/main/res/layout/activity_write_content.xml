@@ -8,13 +8,25 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/backbuttonwrite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:drawableStart="@drawable/sharp_arrow_back_white_48dp"
+            android:minWidth="55dp"
+            android:minHeight="0dp"
+            android:onClick="back"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="17dp" />
 
 
         <TextView
@@ -30,12 +42,12 @@
             tools:text="@string/write_content" />
 
         <Button
-            android:id="@+id/savebutton"
+            android:id="@+id/deletebutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:background="@null"
-            android:drawableStart="@drawable/sharp_save_white_48dp"
+            android:drawableStart="@drawable/sharp_delete_white_48dp"
             android:minWidth="55dp"
             android:minHeight="0dp"
             android:onClick="save"
@@ -44,6 +56,26 @@
 
 
     </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingSaveButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:clickable="true"
+        android:contentDescription="@string/add_button"
+        android:focusable="true"
+        android:onClick="save"
+        android:scaleType="center"
+        app:backgroundTint="@color/black"
+        app:fabCustomSize="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        app:layout_constraintVertical_bias="0.9"
+        app:maxImageSize="45dp"
+        app:srcCompat="@drawable/sharp_save_white_48dp" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine"

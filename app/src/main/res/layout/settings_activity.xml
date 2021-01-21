@@ -4,15 +4,28 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="65dp"
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/backbuttonsettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:drawableStart="@drawable/sharp_arrow_back_white_48dp"
+            android:minWidth="55dp"
+            android:minHeight="0dp"
+            android:onClick="back"
+            tools:layout_editor_absoluteX="18dp"
+            tools:layout_editor_absoluteY="17dp" />
 
 
         <TextView
@@ -26,7 +39,6 @@
             tools:layout_editor_absoluteX="130dp"
             tools:layout_editor_absoluteY="74dp"
             tools:text="@string/settings_page" />
-
 
 
     </androidx.appcompat.widget.Toolbar>

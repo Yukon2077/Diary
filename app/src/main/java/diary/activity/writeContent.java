@@ -27,12 +27,16 @@ public class writeContent extends AppCompatActivity {
         String currentDate = sdfDate.format(new Date());
         SimpleDateFormat sdfTime = new SimpleDateFormat("HH:mm:ss");
         String currentTime = sdfTime.format(new Date());
-        SQLiteDatabase db = openOrCreateDatabase("Log",MODE_PRIVATE,null);
+        SQLiteDatabase db = openOrCreateDatabase("Log", MODE_PRIVATE, null);
         db.execSQL("CREATE TABLE IF NOT EXISTS Log(ID INT,Date DATE,Time TIME,Content VARCHAR(1000000));");
 
     }
 
-    public void save(View view){
+    public void save(View view) {
 
+    }
+
+    public void back(View view){
+        finish();
     }
 }
