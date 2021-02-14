@@ -35,8 +35,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/write_content"
+            android:fontFamily="cursive"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="36sp"
             tools:layout_editor_absoluteX="130dp"
             tools:layout_editor_absoluteY="74dp"
             tools:text="@string/write_content" />
@@ -77,8 +78,26 @@
         app:maxImageSize="45dp"
         app:srcCompat="@drawable/sharp_save_white_48dp" />
 
+    <Button
+        android:id="@+id/dateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:onClick="showDateDialog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar" />
+
+    <Button
+        android:id="@+id/timeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:onClick="showTimeDialog"
+        app:layout_constraintStart_toEndOf="@+id/dateButton"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"/>
+
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/content"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:ems="10"
@@ -89,7 +108,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar" />
+        app:layout_constraintTop_toBottomOf="@+id/dateButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

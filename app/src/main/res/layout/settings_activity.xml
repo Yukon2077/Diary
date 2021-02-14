@@ -33,9 +33,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="cursive"
             android:text="@string/settings_page"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="36sp"
             tools:layout_editor_absoluteX="130dp"
             tools:layout_editor_absoluteY="74dp"
             tools:text="@string/settings_page" />
