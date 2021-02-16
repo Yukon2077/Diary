@@ -36,13 +36,17 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="end"
-            android:background="@null"
+            android:layout_margin="10dp"
+            android:background="@drawable/ripple_effect"
+            android:clickable="true"
             android:drawableStart="@drawable/ic_settings_white_48dp"
-            android:minWidth="55dp"
+            android:focusable="true"
+            android:minWidth="0dp"
             android:minHeight="0dp"
             android:onClick="gotoSettings"
             tools:layout_editor_absoluteX="18dp"
             tools:layout_editor_absoluteY="17dp" />
+
 
 
     </androidx.appcompat.widget.Toolbar>

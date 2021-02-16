@@ -14,7 +14,9 @@
         android:text="TextView"
         android:textAlignment="textStart"
         android:textAllCaps="false"
-        android:textSize="25sp" />
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView_time"
@@ -23,7 +25,9 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:text="TextView"
-        android:textSize="20sp" />
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/textView_created_time"
@@ -32,7 +36,9 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:text="TextView"
-        android:textSize="20sp" />
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="italic" />
 
     <TextView
         android:id="@+id/textView_content"
@@ -42,5 +48,12 @@
         android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
         android:text="TextView"
-        android:textSize="18sp" />
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black" />
 </LinearLayout>

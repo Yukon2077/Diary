@@ -1,9 +1,6 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-
-
     <PreferenceCategory android:title="General Settings">
 
         <EditTextPreference
@@ -17,4 +14,11 @@
             android:key="switch_preference_1"
             android:title="Use Dark mode" />
     </PreferenceCategory>
+
+    <!--<Preference
+        android:key="myCoolButton"
+        android:onClick="delete"
+        android:summary="This is a cool button"
+        android:title="Acts like a button" />-->
+    
 </PreferenceScreen>

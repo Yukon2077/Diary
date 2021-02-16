@@ -130,4 +130,10 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
                 new String[]{String.valueOf(note.getId())});
         db.close();
     }
+    public void deleteTable(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from "+ Entry.TABLE_NAME);
+        //db.execSQL("DELETE table " + Entry.TABLE_NAME);
+        db.close();
+    }
 }
