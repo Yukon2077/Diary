@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseAdapter db;
     private LogAdapter adapter;
     private SQLiteDatabase mdb;
+    private RecyclerView recyclerView;
     //List<Entry> entryList=new ArrayList<>();
 
     @Override
@@ -77,4 +78,12 @@ public class MainActivity extends AppCompatActivity {
                 Entry.COLUMN_ID + " DESC");
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new LogAdapter(this, getAllItems());
+        recyclerView.setAdapter(adapter);
+    }
 }

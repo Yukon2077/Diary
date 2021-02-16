@@ -54,6 +54,7 @@ public class writeContent extends AppCompatActivity {
         timeButton=findViewById(R.id.timeButton);
         dateButton.setText(currentDate);
         timeButton.setText(currentTime);
+        adapter = new LogAdapter(this, getAllItems());
 
     }
 
@@ -64,8 +65,9 @@ public class writeContent extends AppCompatActivity {
             db.insertEntry(content, selectedDate, selectedTime);
         }
         adapter.swapCursor(getAllItems());
-        Intent mainIntent = new Intent(this, MainActivity.class);
-        startActivity(mainIntent);
+        finish();
+        /*Intent mainIntent = new Intent(this, MainActivity.class);
+        startActivity(mainIntent);*/
     }
 
     public void showDateDialog(View view){
@@ -119,6 +121,7 @@ public class writeContent extends AppCompatActivity {
     public void back(View view){
         finish();
     }
+
     public Cursor getAllItems(){
         SQLiteDatabase mdb = db.getReadableDatabase();
         return mdb.query(Entry.TABLE_NAME,
@@ -127,6 +130,6 @@ public class writeContent extends AppCompatActivity {
                 null,
                 null,
                 null,
-                Entry.COLUMN_ID + "DESC");
+                Entry.COLUMN_ID + " DESC");
     }
 }
