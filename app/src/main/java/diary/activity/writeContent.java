@@ -7,6 +7,8 @@ import androidx.fragment.app.DialogFragment;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,9 +26,12 @@ import java.util.Calendar;
 import java.util.Date;
 
 import diary.database.DatabaseAdapter;
+import diary.database.Entry;
+import diary.util.LogAdapter;
 
 public class writeContent extends AppCompatActivity {
     private DatabaseAdapter db;
+    private LogAdapter adapter;
     private Button dateButton;
     private Button timeButton;
     private String selectedDate;
@@ -58,6 +63,7 @@ public class writeContent extends AppCompatActivity {
         if(content != null && !content.equals("")) {
             db.insertEntry(content, selectedDate, selectedTime);
         }
+        adapter.swapCursor(getAllItems());
         Intent mainIntent = new Intent(this, MainActivity.class);
         startActivity(mainIntent);
     }
@@ -79,9 +85,9 @@ public class writeContent extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
 
-                        dateButton.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
-                        Date d = new Date(year, monthOfYear+1, dayOfMonth);
-                        selectedDate=d.toString();
+                        dateButton.setText(dayOfMonth + "-" + (monthOfYear+1) + "-" + year);
+                        //Date d = new Date(year, monthOfYear+1, dayOfMonth);
+                        selectedDate = (String) dateButton.getText();//d.toString();
                     }
                 }, mYear, mMonth, mDay);
         datePickerDialog.show();
@@ -112,5 +118,15 @@ public class writeContent extends AppCompatActivity {
 
     public void back(View view){
         finish();
+    }
+    public Cursor getAllItems(){
+        SQLiteDatabase mdb = db.getReadableDatabase();
+        return mdb.query(Entry.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                Entry.COLUMN_ID + "DESC");
     }
 }
