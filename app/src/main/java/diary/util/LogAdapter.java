@@ -61,10 +61,13 @@ public class LogAdapter extends RecyclerView.Adapter <LogAdapter.LogViewHolder> 
         String createdtime = mCursor.getString(mCursor.getColumnIndex(Entry.COLUMN_CREATED_TIME));
         String content = mCursor.getString(mCursor.getColumnIndex(Entry.COLUMN_CONTENT));
 
+        long id = mCursor.getLong(mCursor.getColumnIndex(Entry.COLUMN_ID));
+
         holder.dateText.setText(date);
         holder.timeText.setText(time);
         holder.createdTimeText.setText(createdtime);
         holder.contentText.setText(content);
+        holder.itemView.setTag(id);
 
     }
 

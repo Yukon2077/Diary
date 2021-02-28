@@ -1,7 +1,9 @@
 package diary.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     private LogAdapter adapter;
     private SQLiteDatabase mdb;
     private RecyclerView recyclerView;
-    //List<Entry> entryList=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,17 +45,18 @@ public class MainActivity extends AppCompatActivity {
         adapter = new LogAdapter(this, getAllItems());
         recyclerView.setAdapter(adapter);
 
-        /*entryList.addAll(db.getAllEntries());
-        LinearLayout lay=findViewById(R.id.main_layout);
-        for(Entry entry: entryList){
-            Log.d("content",entry.getContent());
-            LinearLayout.LayoutParams lparams = new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-            TextView tv=new TextView(this);
-            tv.setLayoutParams(lparams);
-            tv.setText("Date :"+entry.getDate()+ " \nTime: "+entry.getTime()+ "\nCreated Time :"+entry.getCreatedTime()+" \nContent :"+ entry.getContent() + "\n");
-            lay.addView(tv);
-        }*/
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT ) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                removeItem((long) viewHolder.itemView.getTag());
+            }
+        }).attachToRecyclerView(recyclerView);
+
     }
 
     public void gotoSettings(View view) {
@@ -76,6 +78,12 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 null,
                 Entry.COLUMN_ID + " DESC");
+    }
+
+    private void removeItem(long id){
+        SQLiteDatabase mdb = db.getWritableDatabase();
+        mdb.delete(Entry.TABLE_NAME, Entry.COLUMN_ID + "=" + id, null);
+        adapter.swapCursor(getAllItems());
     }
 
     @Override
