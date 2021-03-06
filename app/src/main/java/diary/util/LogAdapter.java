@@ -1,6 +1,7 @@
 package diary.util;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,18 +13,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.yukon.diary.R;
 
+import diary.activity.WriteContent;
 import diary.database.Entry;
 
 public class LogAdapter extends RecyclerView.Adapter <LogAdapter.LogViewHolder> {
     private Context mContext;
     private Cursor mCursor;
+    private Context context;
 
-    public LogAdapter (Context context, Cursor cursor) {
+
+    public LogAdapter(Context context, Cursor cursor) {
         mContext = context;
         mCursor = cursor;
     }
 
-    public class LogViewHolder extends RecyclerView.ViewHolder {
+    public class LogViewHolder extends RecyclerView.ViewHolder{
 
         public TextView dateText;
         public TextView timeText;
@@ -39,6 +43,8 @@ public class LogAdapter extends RecyclerView.Adapter <LogAdapter.LogViewHolder> 
             contentText = itemView.findViewById(R.id.textView_content);
 
         }
+
+
     }
 
     @NonNull
@@ -68,6 +74,13 @@ public class LogAdapter extends RecyclerView.Adapter <LogAdapter.LogViewHolder> 
         holder.createdTimeText.setText(createdtime);
         holder.contentText.setText(content);
         holder.itemView.setTag(id);
+        holder.dateText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent updateIntent = new Intent(mContext, WriteContent.class);
+                mContext.startActivity(updateIntent);
+            }
+        });
 
     }
 
@@ -86,4 +99,5 @@ public class LogAdapter extends RecyclerView.Adapter <LogAdapter.LogViewHolder> 
             notifyDataSetChanged();
         }
     }
+
 }

@@ -1,12 +1,10 @@
 package diary.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -29,7 +27,7 @@ import diary.database.DatabaseAdapter;
 import diary.database.Entry;
 import diary.util.LogAdapter;
 
-public class writeContent extends AppCompatActivity {
+public class WriteContent extends AppCompatActivity {
     private DatabaseAdapter db;
     private LogAdapter adapter;
     private Button dateButton;

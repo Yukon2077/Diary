@@ -2,36 +2,29 @@ package diary.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.yukon.diary.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import diary.database.DatabaseAdapter;
 import diary.database.Entry;
 import diary.util.LogAdapter;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     private DatabaseAdapter db;
     private LogAdapter adapter;
     private SQLiteDatabase mdb;
     private RecyclerView recyclerView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new LogAdapter(this, getAllItems());
         recyclerView.setAdapter(adapter);
 
-        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT ) {
+            new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT ) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
                 return false;
@@ -65,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void gotoWriteContent(View view){
-        Intent writeContent = new Intent(this, diary.activity.writeContent.class) ;
+        Intent writeContent = new Intent(this, WriteContent.class) ;
         startActivity(writeContent);
     }
 
