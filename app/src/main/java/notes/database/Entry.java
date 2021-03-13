@@ -1,4 +1,4 @@
-package diary.database;
+package notes.database;
 
 
 public class Entry {

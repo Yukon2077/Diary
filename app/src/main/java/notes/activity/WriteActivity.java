@@ -1,4 +1,4 @@
-package diary.activity;
+package notes.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 
-import com.yukon.diary.R;
+import com.yukon.notes.R;
 
 
 import java.sql.Time;
@@ -23,11 +23,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import diary.database.DatabaseAdapter;
-import diary.database.Entry;
-import diary.util.LogAdapter;
+import notes.database.DatabaseAdapter;
+import notes.database.Entry;
+import notes.util.LogAdapter;
 
-public class WriteContent extends AppCompatActivity {
+public class WriteActivity extends AppCompatActivity {
     private DatabaseAdapter db;
     private LogAdapter adapter;
     private Button dateButton;
@@ -39,7 +39,8 @@ public class WriteContent extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_write_content);
+        setContentView(R.layout.activity_write);
+
 
         SimpleDateFormat sdfDate = new SimpleDateFormat("dd-MM-yyyy");
         String currentDate = sdfDate.format(new Date());

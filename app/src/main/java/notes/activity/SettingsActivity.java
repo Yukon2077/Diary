@@ -1,16 +1,14 @@
-package diary.activity;
+package notes.activity;
 
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
-import com.yukon.diary.R;
+import com.yukon.notes.R;
 
-import diary.database.DatabaseAdapter;
+import notes.database.DatabaseAdapter;
 
 public class SettingsActivity extends AppCompatActivity {
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yukon.diary">
+    package="com.yukon.notes">
 
     <application
         android:allowBackup="true"
@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name="diary.activity.WriteContent"></activity>
+        <activity android:name="notes.activity.UpdateActivity"></activity>
+        <activity android:name="notes.activity.WriteActivity" />
         <activity
-            android:name="diary.activity.SettingsActivity"
+            android:name="notes.activity.SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name="diary.activity.MainActivity">
+        <activity android:name="notes.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Diary</string>
+    <string name="app_name">Notes</string>
     <string name="settings_button">Settings button</string>
     <string name="add_button">Add button</string>
     <string name="title_activity_settings">SettingsActivity</string>

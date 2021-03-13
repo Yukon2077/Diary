@@ -2,7 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/linearLayout2"
+    android:clickable="true"
+    android:background="@drawable/layout_bg"
+    android:layout_margin="10dp">
 
     <TextView
         android:id="@+id/textView_date"
@@ -14,7 +18,7 @@
         android:text="TextView"
         android:textAlignment="textStart"
         android:textAllCaps="false"
-        android:textColor="@android:color/black"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -25,7 +29,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:text="TextView"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="italic" />
 
@@ -49,7 +53,9 @@
         android:layout_marginRight="15dp"
         android:layout_marginBottom="15dp"
         android:text="TextView"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp" />
+
+    <!--<android:textIsSelectable="true">-->
 
 </LinearLayout>

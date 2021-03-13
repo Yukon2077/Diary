@@ -1,4 +1,4 @@
-package diary.activity;
+package notes.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,13 +11,12 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
-import com.yukon.diary.R;
+import com.yukon.notes.R;
 
-import diary.database.DatabaseAdapter;
-import diary.database.Entry;
-import diary.util.LogAdapter;
+import notes.database.DatabaseAdapter;
+import notes.database.Entry;
+import notes.util.LogAdapter;
 
 public class MainActivity extends AppCompatActivity{
     private DatabaseAdapter db;
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity{
 
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                removeItem((long) viewHolder.itemView.getTag());
+                removeItem((Integer) viewHolder.itemView.getTag());
             }
         }).attachToRecyclerView(recyclerView);
 
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void gotoWriteContent(View view){
-        Intent writeContent = new Intent(this, WriteContent.class) ;
+        Intent writeContent = new Intent(this, WriteActivity.class) ;
         startActivity(writeContent);
     }
 
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity{
                 Entry.COLUMN_ID + " DESC");
     }
 
-    private void removeItem(long id){
+    private void removeItem(int id){
         SQLiteDatabase mdb = db.getWritableDatabase();
         mdb.delete(Entry.TABLE_NAME, Entry.COLUMN_ID + "=" + id, null);
         adapter.swapCursor(getAllItems());

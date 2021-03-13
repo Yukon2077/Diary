@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="diary.activity.WriteContent">
+    tools:context="notes.activity.WriteActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/app_bar"
@@ -101,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@+id/app_bar"/>
 
     <EditText
-        android:id="@+id/content"
+        android:id="@+id/updatecontent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@android:color/transparent"

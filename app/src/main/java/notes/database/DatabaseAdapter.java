@@ -1,4 +1,4 @@
-package diary.database;
+package notes.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -15,7 +15,7 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
 
-    private static final String DATABASE_NAME = "diary";
+    private static final String DATABASE_NAME = "notes";
 
 
     public DatabaseAdapter(Context context) {
@@ -117,8 +117,8 @@ public class DatabaseAdapter extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(Entry.COLUMN_CONTENT, entry.getContent());
-        values.put(Entry.COLUMN_DATE, entry.getContent());
-        values.put(Entry.COLUMN_TIME, entry.getContent());
+        values.put(Entry.COLUMN_DATE, entry.getDate());
+        values.put(Entry.COLUMN_TIME, entry.getTime());
 
         return db.update(Entry.TABLE_NAME, values, Entry.COLUMN_ID + " = ?",
                 new String[]{String.valueOf(entry.getId())});
