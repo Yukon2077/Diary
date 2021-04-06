@@ -49,11 +49,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
             android:drawableStart="@drawable/sharp_delete_white_48dp"
             android:minWidth="55dp"
             android:minHeight="0dp"
             android:onClick="save"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
+            android:visibility="gone"
             tools:layout_editor_absoluteX="18dp"
             tools:layout_editor_absoluteY="17dp" />
 
@@ -86,8 +87,10 @@
         android:id="@+id/dateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:onClick="showDateDialog"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
+        app:backgroundTint="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/timeButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_bar" />
 
@@ -95,10 +98,12 @@
         android:id="@+id/timeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
         android:onClick="showTimeDialog"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
+        app:backgroundTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/dateButton"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar"/>
+        app:layout_constraintTop_toBottomOf="@+id/app_bar" />
 
     <EditText
         android:id="@+id/content"
@@ -109,7 +114,7 @@
         android:gravity="start|top"
         android:hint="@string/write_anything"
         android:importantForAutofill="no"
-        android:inputType="textMultiLine"
+        android:inputType="textMultiLine|textAutoCorrect|textAutoComplete|textCapSentences"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

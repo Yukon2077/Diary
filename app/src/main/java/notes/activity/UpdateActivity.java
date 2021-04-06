@@ -149,6 +149,10 @@ public class UpdateActivity extends AppCompatActivity {
         timePickerDialog.show();
     }
 
+    public void delete(View view) {
+        finish();
+    }
+
     public void back(View view){
         finish();
     }
